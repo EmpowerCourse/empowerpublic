@@ -12,6 +12,7 @@ using NHibernate.Criterion;
 using Empower.Domain.Client.Requests;
 using Empower.Domain.Client.ViewModels;
 using Empower.NHibernate.Interfaces;
+using Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Internal.Networking;
 
 namespace Empower.Mvc.Controllers
 {
@@ -36,10 +37,33 @@ namespace Empower.Mvc.Controllers
 
         public IActionResult Index()
         {
-           
-          
-            // return View(vm);
-            return View();
+            var allActors = _actorRepository
+                .GetQuery().ToList();
+            return View(allActors);
+        }
+
+        [HttpPost]
+        public IActionResult Filter(string firstname, string lastname)
+        {
+            var filteredActors = _actorRepository.GetQuery();
+            if (firstname != null)
+            {
+                filteredActors = filteredActors
+                    .Where(x => x.FirstName.StartsWith(firstname));
+            }
+
+            if (lastname != null)
+            {
+                filteredActors = filteredActors
+                    .Where(x => x.LastName.StartsWith(lastname));
+            }
+
+            //var filteredActors = _actorRepository
+            //    .GetQuery()
+            //    .Where(x => (firstname == null || x.FirstName.StartsWith(firstname))
+            //                && (lastname == null || x.LastName.StartsWith(lastname)))
+            //    .ToList();
+            return PartialView("_ActorList", filteredActors.ToList());  
         }
 
         public IActionResult Contact()

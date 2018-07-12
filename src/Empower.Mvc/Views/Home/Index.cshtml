@@ -1,12 +1,37 @@
-﻿
+﻿@using Empower.NHibernate.Entities
+@model List<Actor>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Actors";
 }
 
+<script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+
 <div class="jumbotron">
-    <h1>Empower MVC training</h1>
-    <h2>Paul Alan Taylor</h2>
+    <h2>@ViewData["Title"]</h2>
 </div>
-<div class="row">
-    
+<div class="row-fluid">
+    <div class="well">
+        <input type="text" id="firstname" placeholder="First Name"/>
+        <input type="text" id="lastname" placeholder="Last Name"/>
+        <button class="btn btn-primary" id="filter">Filter</button>
+    </div>
 </div>
+<div id="actors" class="row-fluid">
+    @Html.Partial("_ActorList",Model)
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#filter").click(function (e) {
+            e.preventDefault();
+            var data = {
+                firstname: $('#firstname').val(),
+                lastname: $('#lastname').val()
+            };
+            $.post('@Url.Action("Filter","Home")', data, function(result) {
+                $('#actors').html(result);
+            });
+        });
+    });
+</script>

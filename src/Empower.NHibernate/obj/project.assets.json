@@ -3060,7 +3060,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SSC17\\.nuget\\packages\\": {},
+    "C:\\Users\\harper\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3069,17 +3069,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\Empower.NHibernate.csproj",
+      "projectUniqueName": "C:\\projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\Empower.NHibernate.csproj",
       "projectName": "Empower.NHibernate",
-      "projectPath": "C:\\Projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\Empower.NHibernate.csproj",
-      "packagesPath": "C:\\Users\\SSC17\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\obj\\",
+      "projectPath": "C:\\projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\Empower.NHibernate.csproj",
+      "packagesPath": "C:\\Users\\harper\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\empower\\empowerpublic\\src\\Empower.NHibernate\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\SSC17\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\harper\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -3,6 +3,7 @@ using Empower.NHibernate.Interfaces;
 using NHibernate;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Empower.NHibernate
@@ -38,6 +39,16 @@ namespace Empower.NHibernate
         public IQueryOver<TEntity, TEntity> GetQueryOver()
         {
             return _session.QueryOver<TEntity>();
+        }
+
+        public IQueryable<TEntity> GetQuery()
+        {
+            return _session.Query<TEntity>();
+        }
+
+        public IQueryable<TEntity> GetQueryable()
+        {
+            return _session.Query<TEntity>();
         }
 
         public TEntity Update(TEntity entity)
